@@ -20,6 +20,12 @@
     background-color: rgba(0, 0, 0, 0.431);
 }
 
+.bg-color {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #B50202 0%, #9D0000 2%, #000000 66%);
+}
+
 
 /* body {
     background-color: black;
@@ -30,8 +36,33 @@
     width: 50%;
     border: 3px solid green;
     padding: 10px;
+    
 }
 .bg-image{
+    /*background-image: url("https://i.pinimg.com/originals/0b/71/f4/0b71f4db26e77b8da823748623b65dcb.jpg");*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+
+.each-slide-effect > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    height: 350px;
+  }
+  
+  .each-slide-effect span {
+    padding: 20px;
+    font-size: 20px;
+    background: #efefef;
+    text-align: center;
+  }
+
+  .bg-image{
     background-image: url("https://i.pinimg.com/originals/0b/71/f4/0b71f4db26e77b8da823748623b65dcb.jpg");
     background-position: center;
     background-repeat: no-repeat;

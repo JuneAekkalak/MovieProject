@@ -12,21 +12,23 @@ function Contact() {
 
   return (
     <div className="bg-image">
-      <p style={{fontSize:"150px"}} className="text-white">Contact</p>
-      <p style={{fontSize:"50px"}} className="text-white">Email: {email}</p>
-      <p style={{fontSize:"50px"}} className="text-white">Phone Number: {phonenumber}</p>
-      <p style={{fontSize:"50px"}} className="text-white">Company: {company}</p>
+      <p style={{fontSize:"50px"}} className="text-white">Contact</p>
+      <p style={{fontSize:"20px"}} className="text-white">Email: {email}</p>
+      <p style={{fontSize:"20px"}} className="text-white">Phone Number: {phonenumber}</p>
+      <p style={{fontSize:"20px"}} className="text-white">Company: {company}</p>
 
       <iframe
         title="Google Map"
         src={mapUrl}
-        width="600"
-        height="450"
+        width="1000"
+        height="600"
         style={{ border: 0 }}
         allowFullScreen
         loading="lazy"
       />
+      
     </div>
+    
   );
 };
 

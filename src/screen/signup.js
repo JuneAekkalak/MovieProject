@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "../style/style.css";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
