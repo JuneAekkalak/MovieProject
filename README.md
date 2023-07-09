@@ -1,3 +1,6 @@
 # firstproject
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> develop
