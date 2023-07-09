@@ -13,8 +13,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
+    <div className="bg-color">
     <BrowserRouter>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
         {/* <Route path="/" element={<Signin />} />
         <Route path="/signup" element={<Signup />} /> */}
@@ -27,6 +28,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </BrowserRouter>
+    </div>
   );
 }
 
