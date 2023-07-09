@@ -7,16 +7,18 @@ import Home from "./screen/home";
 import MovieDetail from "./screen/movieDetail";
 import Contact from "./screen/contact";
 import Favorite from "./screen/favorite";
+import Navbar from "./component/nav";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
-        <Route path="/" element={<Signin />} />
-        <Route path="/signup" element={<Signup />} />
-
+        {/* <Route path="/" element={<Signin />} />
+        <Route path="/signup" element={<Signup />} /> */}
+        <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
 
         <Route path="/favorite" element={<Favorite />} />
