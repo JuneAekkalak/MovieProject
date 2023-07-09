@@ -54,7 +54,7 @@ const Signin = () => {
                 src="https://seeklogo.com/images/M/movie-time-cinema-logo-8B5BE91828-seeklogo.com.png"
                 alt="logo"
               />
-              Movie Time
+              Phone Time
             </p>
             <div
               className="w-full  bg-signin rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700 "

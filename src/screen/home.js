@@ -3,31 +3,22 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import movie_data from "../json/movie";
-import FavoriteButton from "../component/FavoriteButton";
+import phone_data from "../json/phone_data";
 import "../style/style.css";
 import SlideShow from "../component/slide";
 import BannerShow from "../component/banner";
 
-const Home = () => {
+const Home= () => {
   const [favoriteItems, setFavoriteItems] = useState([]);
   const [clickedItems, setClickedItems] = useState({});
 
-  const [movieDay1, setMovieDay1] = useState([]);
-  const [movieDay2, setMovieDay2] = useState([]);
-  const [movieDay3, setMovieDay3] = useState([]);
-  const [movieDay4, setMovieDay4] = useState([]);
+  const [data, setData] = useState([]);
+
 
   useEffect(() => {
-    setMovieDay1(movie_data.slice(0, 15));
-    setMovieDay2(movie_data.slice(15, 30));
-    setMovieDay3(movie_data.slice(30, 45));
-    setMovieDay4(movie_data.slice(45, 62));
+    console.log("data = ",phone_data)
+    setData(phone_data);
 
-    console.log("1", movieDay1);
-    console.log("2", movieDay2);
-    console.log("3", movieDay3);
-    console.log("4", movieDay4);
   }, []);
 
   useEffect(() => {
@@ -69,7 +60,7 @@ const Home = () => {
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
-        {movieDay1.map((item) => (
+        {data.map((item) => (
           <div key={item.id} className="px-2 py-1">
             <button
               className="btn"
@@ -87,28 +78,23 @@ const Home = () => {
                 }
               />
             </button>
-            <Link to={`/movie-detail?id=${item.id}`}
+            <Link to={`/phone-detail?id=${item.id}`}
               className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
             >
               <img
-                src={item.image_url}
-                alt={item.title}
+                src={item.URL}
+                alt={item.name}
                 style={{ width: "250px" }}
                 className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
               />
               <div className="flex flex-col justify-between p-4 leading-normal ">
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  Movie Name : {item.title}
+                  Phone Name : {item.name}
                 </h5>
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  Director: {item.director}
+                  Price: {item.price}
                 </p>
-                {/* <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                Actor: {item.cast}
-                </p> */}
-                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  รอบหนัง {item.show_time}.00
-                </p>
+             
               </div>
             </Link>
           </div>
