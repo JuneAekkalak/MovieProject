@@ -14,6 +14,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <div className="bg-color">
+      <Navbar/>
     <BrowserRouter>
       {/* <Navbar /> */}
       <Routes>
