@@ -23,7 +23,7 @@
 .bg-color {
     margin: 0;
     padding: 0;
-    background-color: black;
+    background: linear-gradient(180deg, #B50202 0%, #9D0000 2%, #000000 66%);
 }
 
 
@@ -36,12 +36,14 @@
     width: 50%;
     border: 3px solid green;
     padding: 10px;
+    
 }
 .bg-image{
-    background-image: url("https://i.pinimg.com/originals/0b/71/f4/0b71f4db26e77b8da823748623b65dcb.jpg");
+    /*background-image: url("https://i.pinimg.com/originals/0b/71/f4/0b71f4db26e77b8da823748623b65dcb.jpg");*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    text-align: center;
 }
 
 
