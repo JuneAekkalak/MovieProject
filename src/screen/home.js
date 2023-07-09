@@ -7,6 +7,7 @@ import movie_data from "../json/movie";
 import FavoriteButton from "../component/FavoriteButton";
 import "../style/style.css";
 import SlideShow from "../component/slide";
+import BannerShow from "../component/banner";
 
 const Home = () => {
   const [favoriteItems, setFavoriteItems] = useState([]);
@@ -63,14 +64,30 @@ const Home = () => {
     <div className="container">
       <SlideShow />
       <div className="flex justify-between">
-        <p className="text-xl font-semibold" style={{ fontSize: "25px" }}>
-          Movie Day 1
+        <p className="text-xl font-semibold py-3" style={{ fontSize: "25px" }}>
+          To Day
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
         {movieDay1.map((item) => (
           <div key={item.id} className="px-2 py-1">
-            <Link
+            <button
+              className="btn"
+              onClick={() => {
+                console.log("Button clicked!");
+                addToFavorites(item);
+              }}
+            >
+              <FontAwesomeIcon
+                icon={faHeart}
+                color={
+                  favoriteItems.some((favItem) => favItem.id === item.id)
+                    ? "red"
+                    : "gray"
+                }
+              />
+            </button>
+            <Link to={`/movie-detail?id=${item.id}`}
               className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
             >
               <img
@@ -81,15 +98,24 @@ const Home = () => {
               />
               <div className="flex flex-col justify-between p-4 leading-normal ">
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  {item.title}
+                  Movie Name : {item.title}
                 </h5>
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+                  Director: {item.director}
+                </p>
+                {/* <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                Actor: {item.cast}
+                </p> */}
+                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  รอบหนัง {item.show_time}.00
                 </p>
               </div>
             </Link>
           </div>
         ))}
+      </div>
+      <div className="mt-5 mb-5">
+        <BannerShow />
       </div>
     </div >
   );
