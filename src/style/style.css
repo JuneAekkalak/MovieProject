@@ -61,3 +61,10 @@
     background: #efefef;
     text-align: center;
   }
+
+  .bg-image{
+    background-image: url("https://i.pinimg.com/originals/0b/71/f4/0b71f4db26e77b8da823748623b65dcb.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
